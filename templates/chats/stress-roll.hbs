@@ -1,0 +1,11 @@
+<div class="active-measures chat-card">
+    <header class="roll-header">
+        <h3>{{localize "AM.Stress"}} Roll</h3>
+    </header>
+    <div class="roll-body">
+        <p>Rolled <strong>{{total}}</strong> vs Target <strong>{{target}}</strong>.</p>
+        <h4 class="roll-result {{#if success}}success{{else}}failure{{/if}}">
+            {{#if success}}Success!{{else}}Failure!{{/if}}
+        </h4>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 import { SystemActor, SystemItem } from "./module/documents.mjs";
-import { HeroDataModel, VillainDataModel, PawnDataModel, WeaponDataModel, SpellDataModel } from "./module/data-models/data-models.mjs";
-import { ActiveMeasuresActorSheet } from "./module/sheets/actor-sheet.mjs";
+import { ActorNPC } from "./module/data-models/data-models.mjs";
+import { AmActorSheet } from "./module/sheets/am-actor-sheet.mjs";
+const { loadTemplates } = foundry.applications.handlebars;
 const { Actors } = foundry.documents.collections;
 const { ActorSheet } = foundry.appv1.sheets;
 
@@ -12,31 +13,19 @@ Hooks.once("init", () => {
 
   // Configure System Data Models.
   CONFIG.Actor.dataModels = {
-    hero: HeroDataModel,
-    villain: VillainDataModel,
-    pawn: PawnDataModel
-  };
-  CONFIG.Item.dataModels = {
-    weapon: WeaponDataModel,
-    spell: SpellDataModel
+    npc: ActorNPC,
   };
 
-  // Configure trackable attributes.
-  CONFIG.Actor.trackableAttributes = {
-    hero: {
-      bar: ["resources.health", "resources.power", "goodness"],
-      value: ["progress"]
-    },
-    pawn: {
-      bar: ["resources.health", "resources.power"],
-      value: []
-    }
-  };
+  // Preload Handlebars partials
+  loadTemplates([
+    "systems/active-measures/templates/actors/tabs/tab-level.hbs",
+    "systems/active-measures/templates/actors/tabs/tab-stress.hbs"
+  ]);
 
   // Register custom sheets
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("active-measures", ActiveMeasuresActorSheet, {
-    types: ["hero", "villain", "pawn"],
+  Actors.registerSheet("active-measures", AmActorSheet, {
+    types: ["npc"],
     makeDefault: true,
     label: "Active Measures Actor Sheet"
   });

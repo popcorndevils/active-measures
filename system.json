@@ -40,13 +40,7 @@
   ],
   "documentTypes": {
     "Actor": {
-      "hero": { "htmlFields": ["background.biography"] },
-      "villain": { "htmlFields": ["background.biography"] },
-      "pawn": {}
-    },
-    "Item": {
-      "weapon": {},
-      "spell": {}
+      "npc": { "htmlFields": ["background.biography"] }
     }
   },
   "socket": false,

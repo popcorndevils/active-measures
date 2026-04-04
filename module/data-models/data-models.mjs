@@ -1,45 +1,43 @@
-const { HTMLField, NumberField, SchemaField, StringField } = foundry.data.fields;
+// const { HTMLField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
 /* -------------------------------------------- */
 /*  Actor Models                                */
 /* -------------------------------------------- */
 
-export {default as HeroDataModel} from "./actors/HeroDataModel.mjs";
-export {default as VillainDataModel} from "./actors/VillainDataModel.mjs";
-export {default as PawnDataModel} from "./actors/PawnDataModel.mjs";
+export {default as ActorNPC} from "./actors/ActorNPC.mjs";
 
 /* -------------------------------------------- */
 /*  Item Models                                 */
 /* -------------------------------------------- */
 
-class ItemDataModel extends foundry.abstract.TypeDataModel {
-  static defineSchema() {
-    return {
-      rarity: new StringField({
-        required: true,
-        blank: false,
-        options: ["common", "uncommon", "rare", "legendary"],
-        initial: "common"
-      }),
-      price: new NumberField({ required: true, integer: true, min: 0, initial: 20 })
-    };
-  }
-}
+// class ItemDataModel extends foundry.abstract.TypeDataModel {
+//   static defineSchema() {
+//     return {
+//       rarity: new StringField({
+//         required: true,
+//         blank: false,
+//         options: ["common", "uncommon", "rare", "legendary"],
+//         initial: "common"
+//       }),
+//       price: new NumberField({ required: true, integer: true, min: 0, initial: 20 })
+//     };
+//   }
+// }
 
-export class WeaponDataModel extends ItemDataModel {
-  static defineSchema() {
-    return {
-      ...super.defineSchema(),
-      damage: new NumberField({ required: true, integer: true, positive: true, initial: 5 })
-    };
-  }
-}
+// export class WeaponDataModel extends ItemDataModel {
+//   static defineSchema() {
+//     return {
+//       ...super.defineSchema(),
+//       damage: new NumberField({ required: true, integer: true, positive: true, initial: 5 })
+//     };
+//   }
+// }
 
-export class SpellDataModel extends ItemDataModel {
-  static defineSchema() {
-    return {
-      ...super.defineSchema(),
-      cost: new NumberField({ required: true, integer: true, positive: true, initial: 2 })
-    };
-  }
-}
+// export class SpellDataModel extends ItemDataModel {
+//   static defineSchema() {
+//     return {
+//       ...super.defineSchema(),
+//       cost: new NumberField({ required: true, integer: true, positive: true, initial: 2 })
+//     };
+//   }
+// }

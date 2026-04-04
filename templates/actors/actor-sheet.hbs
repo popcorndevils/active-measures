@@ -1,0 +1,57 @@
+<div class="active-measures flexcol">
+    {{!-- SHEET HEADER --}}
+    <header class="sheet-header flexrow">
+        {{!-- Profile Image --}}
+        <img class="profile-img" src="{{document.img}}" data-action="editImage" title="{{document.name}}" height="100" width="100" style="flex: 0 0 100px; margin-right: 10px; border: 1px solid #000;"/>
+        
+        {{!-- Name and Core Resources --}}
+        <div class="header-fields flexcol">
+            <h1 class="charname" style="margin-bottom: 5px;">
+                {{!-- Binding to name="name" automatically updates the Document's root name property --}}
+                <input name="name" type="text" value="{{document.name}}" placeholder="{{localize 'AM.CharacterName'}}"/>
+            </h1>
+            
+            <div class="resources flexrow">
+                <div class="resource flexcol flex-group-center" style="margin-right: 10px;">
+                    <label for="system.resources.health.value" class="resource-label">{{localize "AM.Health"}}</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="number" name="system.resources.health.value" value="{{systemData.resources.health.value}}"/>
+                        <span> / </span>
+                        <input type="number" name="system.resources.health.max" value="{{systemData.resources.health.max}}"/>
+                    </div>
+                </div>
+                
+                <div class="resource flexcol flex-group-center">
+                    <label for="system.resources.power.value" class="resource-label">{{localize "AM.Power"}}</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="number" name="system.resources.power.value" value="{{systemData.resources.power.value}}"/>
+                        <span> / </span>
+                        <input type="number" name="system.resources.power.max" value="{{systemData.resources.power.max}}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <hr>
+
+    {{!-- SHEET NAVIGATION --}}
+    {{#if (eq document.type "npc")}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item {{#if (eq tabGroups.primary 'level')}}active{{/if}}" data-action="tab" data-group="primary" data-tab="level">{{localize "AM.NPCLevel"}}</a>
+        <a class="item {{#if (eq tabGroups.primary 'stress')}}active{{/if}}" data-action="tab" data-group="primary" data-tab="stress">{{localize "AM.Stress"}}</a>
+    </nav>
+    {{/if}}
+
+    {{!-- SHEET BODY --}}
+    <section class="sheet-body flexcol">
+        {{!-- Conditionally render data based on the Actor type --}}
+        {{#if (eq document.type "npc")}}
+            {{!-- Level Tab --}}
+            {{> "systems/active-measures/templates/actors/tabs/tab-level.hbs"}}
+
+            {{!-- Stress Tab --}}
+            {{> "systems/active-measures/templates/actors/tabs/tab-stress.hbs"}}
+        {{/if}}
+    </section>
+</div>

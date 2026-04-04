@@ -1,13 +1,15 @@
 {
   "TYPES": {
     "Actor": {
-      "hero": "Hero",
-      "villain": "Villain",
-      "pawn": "Pawn"
-    },
-    "Item": {
-      "weapon": "Weapon",
-      "spell": "Spell"
+      "npc": "NPC"
     }
+  },
+  "AM": {
+    "Health": "Health",
+    "Power": "Power",
+    "CharacterName": "Character Name",
+    "NPCLevel": "NPC Level",
+    "Stress": "Stress",
+    "RollStress": "Roll Stress"
   }
 }
