@@ -1,0 +1,61 @@
+{
+  "id": "active-measures",
+  "title": "Active Measures: A Forged in the Dark Game",
+  "description": "This is the official Foundry VTT System module for the Active Measures TTRPG.",
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": 12,
+    "verified": "14.359"
+  },
+  "authors": [
+    {
+      "name": "PopcornDevils",
+      "email": "popcorndevils@gmail.com"
+    }
+  ],
+  "esmodules": [
+    "active-measures.mjs"
+  ],
+  "styles": [
+    "styles/active-measures.css"
+  ],
+  "packs": [
+    {
+      "name": "monsters",
+      "label": "My Monsters",
+      "type": "Actor"
+    },
+    {
+      "name": "items",
+      "label": "My Items",
+      "type": "Item"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "hero": { "htmlFields": ["background.biography"] },
+      "villain": { "htmlFields": ["background.biography"] },
+      "pawn": {}
+    },
+    "Item": {
+      "weapon": {},
+      "spell": {}
+    }
+  },
+  "socket": false,
+  "initiative": "1d20",
+  "grid": {
+    "distance": 10,
+    "units": "ft"
+  },
+  "primaryTokenAttribute": "resources.health",
+  "secondaryTokenAttribute": "resources.power",
+  "url": "https://github.com/popcorndevils/active-measures"
+}

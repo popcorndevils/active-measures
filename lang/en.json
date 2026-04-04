@@ -1,0 +1,13 @@
+{
+  "TYPES": {
+    "Actor": {
+      "hero": "Hero",
+      "villain": "Villain",
+      "pawn": "Pawn"
+    },
+    "Item": {
+      "weapon": "Weapon",
+      "spell": "Spell"
+    }
+  }
+}
