@@ -1,5 +1,5 @@
 import { SystemActor, SystemItem } from "./module/documents.mjs";
-import { HeroDataModel, VillainDataModel, PawnDataModel, WeaponDataModel, SpellDataModel } from "./module/data-models.mjs";
+import { HeroDataModel, VillainDataModel, PawnDataModel, WeaponDataModel, SpellDataModel } from "./module/data-models/data-models.mjs";
 import { ActiveMeasuresActorSheet } from "./module/sheets/actor-sheet.mjs";
 const { Actors } = foundry.documents.collections;
 const { ActorSheet } = foundry.appv1.sheets;

@@ -1,0 +1,7 @@
+packs/items/*.log
+packs/monsters/*.log
+packs/*/CURRENT
+packs/*/LOCK
+packs/*/LOG
+packs/*/Log.old
+packs/*/MANIFEST*

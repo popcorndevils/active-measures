@@ -35,17 +35,33 @@
 
     <hr>
 
+    {{!-- SHEET NAVIGATION --}}
+    {{#if (eq document.type "hero")}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item {{#if (eq tabGroups.primary 'level')}}active{{/if}}" data-action="tab" data-group="primary" data-tab="level">Level</a>
+        <a class="item {{#if (eq tabGroups.primary 'goodness')}}active{{/if}}" data-action="tab" data-group="primary" data-tab="goodness">Goodness</a>
+    </nav>
+    {{/if}}
+
     {{!-- SHEET BODY --}}
     <section class="sheet-body flexcol">
         {{!-- Conditionally render data based on the Actor type --}}
-        {{#if (eq document.type "Hero")}}
-            <div class="form-group flexrow">
-                <label>Hero Level</label>
-                <input type="number" name="system.level" value="{{systemData.level}}" style="max-width: 50px;"/>
-                
-                <a style="margin-left: 15px; cursor: pointer;" data-action="rollGoodness" title="Roll Goodness"><i class="fas fa-dice-d20"></i> Goodness</a>
-                <input type="number" name="system.goodness.value" value="{{systemData.goodness.value}}" style="max-width: 50px;"/>
-                <span> / {{systemData.goodness.max}}</span>
+        {{#if (eq document.type "hero")}}
+            {{!-- Level Tab --}}
+            <div class="tab {{#if (eq tabGroups.primary 'level')}}active{{/if}}" data-group="primary" data-tab="level">
+                <div class="form-group flexrow">
+                    <label>Hero Level</label>
+                    <input type="number" name="system.level" value="{{systemData.level}}" style="max-width: 50px;"/>
+                </div>
+            </div>
+
+            {{!-- Goodness Tab --}}
+            <div class="tab {{#if (eq tabGroups.primary 'goodness')}}active{{/if}}" data-group="primary" data-tab="goodness">
+                <div class="form-group flexrow">
+                    <a style="cursor: pointer;" data-action="rollGoodness" title="Roll Goodness"><i class="fas fa-dice-d20"></i> Goodness</a>
+                    <input type="number" name="system.goodness.value" value="{{systemData.goodness.value}}" style="max-width: 50px;"/>
+                    <span> / {{systemData.goodness.max}}</span>
+                </div>
             </div>
         {{/if}}
     </section>

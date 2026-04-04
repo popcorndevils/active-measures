@@ -3,6 +3,11 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 
 export class ActiveMeasuresActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   
+  // In Application V2, we define our initial tabs here
+  tabGroups = {
+    primary: "level"
+  };
+  
   static DEFAULT_OPTIONS = {
     classes: ["active-measures", "sheet", "characterSheet"],
     tag: "form",
@@ -40,6 +45,9 @@ export class ActiveMeasuresActorSheet extends HandlebarsApplicationMixin(ActorSh
     context.isOwner = this.document.isOwner;
     context.isGM = game.user.isGM;
     context.items = this.document.items;
+
+    // Pass tab state to Handlebars so it knows which tabs should be active
+    context.tabGroups = this.tabGroups;
 
     return context;
   }
