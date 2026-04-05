@@ -29,7 +29,7 @@ export class AmPlayerSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   };
 
   static PARTS = {
-    body: { template: "systems/active-measures/templates/actors/sheet-player.hbs" }
+    body: { template: "systems/active-measures/templates/actors/player/sheet-player.hbs" }
   };
 
   get title() {
@@ -68,11 +68,11 @@ export class AmPlayerSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       target: stress,
       success: success
     };
-    const flavorContent = await renderTemplate("systems/active-measures/templates/chats/stress-roll.hbs", templateData);
+    const chatCard = await renderTemplate("systems/active-measures/templates/chats/stress-roll.hbs", templateData);
 
     await roll.toMessage({
       speaker: ChatMessage.getSpeaker({ actor: actor }),
-      flavor: flavorContent
+      flavor: chatCard
     });
   }
 }

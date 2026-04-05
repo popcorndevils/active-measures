@@ -1,0 +1,22 @@
+<div class="active-measures flexcol">
+    {{!-- SHEET HEADER --}}
+    {{> "systems/active-measures/templates/actors/player/header-player.hbs"}}
+
+    <hr>
+
+    {{!-- SHEET NAVIGATION --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item {{#if (eq tabGroups.primary 'level')}}active{{/if}}" data-action="tab" data-group="primary" data-tab="level">{{localize "AM.ActorFields.Level"}}</a>
+        <a class="item {{#if (eq tabGroups.primary 'stress')}}active{{/if}}" data-action="tab" data-group="primary" data-tab="stress">{{localize "AM.ActorFields.Stress"}}</a>
+    </nav>
+
+    {{!-- SHEET BODY --}}
+    <section class="sheet-body flexcol">
+        {{!-- Conditionally render data based on the Actor type --}}
+            {{!-- Level Tab --}}
+            {{> "systems/active-measures/templates/actors/player/tabs/tab-level.hbs"}}
+
+            {{!-- Stress Tab --}}
+            {{> "systems/active-measures/templates/actors/player/tabs/tab-stress.hbs"}}
+    </section>
+</div>

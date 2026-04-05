@@ -20,8 +20,9 @@ Hooks.once("init", () => {
 
   // Preload Handlebars partials
   loadTemplates([
-    "systems/active-measures/templates/actors/tabs/tab-level.hbs",
-    "systems/active-measures/templates/actors/tabs/tab-stress.hbs"
+    "systems/active-measures/templates/actors/player/tabs/tab-level.hbs",
+    "systems/active-measures/templates/actors/player/tabs/tab-stress.hbs",
+    "systems/active-measures/templates/actors/player/header-player.hbs"
   ]);
 
   // Register custom sheets

@@ -48,10 +48,10 @@
         {{!-- Conditionally render data based on the Actor type --}}
         {{#if (eq document.type "npc")}}
             {{!-- Level Tab --}}
-            {{> "systems/active-measures/templates/actors/tabs/tab-level.hbs"}}
+            {{> "systems/active-measures/templates/actors/player/tabs/tab-level.hbs"}}
 
             {{!-- Stress Tab --}}
-            {{> "systems/active-measures/templates/actors/tabs/tab-stress.hbs"}}
+            {{> "systems/active-measures/templates/actors/player/tabs/tab-stress.hbs"}}
         {{/if}}
     </section>
 </div>

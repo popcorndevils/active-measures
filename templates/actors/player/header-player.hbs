@@ -1,5 +1,3 @@
-<div class="active-measures flexcol">
-    {{!-- SHEET HEADER --}}
     <header class="sheet-header flexrow">
         {{!-- Profile Image --}}
         <img class="profile-img" src="{{document.img}}" data-action="editImage" title="{{document.name}}" height="100" width="100" style="flex: 0 0 100px; margin-right: 10px; border: 1px solid #000;"/>
@@ -32,26 +30,3 @@
             </div>
         </div>
     </header>
-
-    <hr>
-
-    {{!-- SHEET NAVIGATION --}}
-    {{#if (eq document.type "player")}}
-    <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item {{#if (eq tabGroups.primary 'level')}}active{{/if}}" data-action="tab" data-group="primary" data-tab="level">{{localize "AM.ActorFields.Level"}}</a>
-        <a class="item {{#if (eq tabGroups.primary 'stress')}}active{{/if}}" data-action="tab" data-group="primary" data-tab="stress">{{localize "AM.ActorFields.Stress"}}</a>
-    </nav>
-    {{/if}}
-
-    {{!-- SHEET BODY --}}
-    <section class="sheet-body flexcol">
-        {{!-- Conditionally render data based on the Actor type --}}
-        {{#if (eq document.type "player")}}
-            {{!-- Level Tab --}}
-            {{> "systems/active-measures/templates/actors/tabs/tab-level.hbs"}}
-
-            {{!-- Stress Tab --}}
-            {{> "systems/active-measures/templates/actors/tabs/tab-stress.hbs"}}
-        {{/if}}
-    </section>
-</div>

@@ -1,10 +1,25 @@
-const { NumberField, SchemaField } = foundry.data.fields;
+const { NumberField, SchemaField, StringField, HTMLField } = foundry.data.fields;
+
 import BaseActor from "./BaseActor.mjs";
 
 export default class ActorPlayer extends BaseActor {
     static defineSchema() {
         return {
             ...super.defineSchema(),
+            biography: new SchemaField( {
+                background: new StringField( {
+                    blank: true,
+                    required: false
+                }),
+                description: new HTMLField( {
+                    blank: true,
+                    required: false
+                }),
+                appearance: new StringField( {
+                    blank: true,
+                    required: false
+                })
+            }),
             tracks: new SchemaField( {
                 stress: new SchemaField({
                     value: new NumberField({
