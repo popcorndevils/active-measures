@@ -1,7 +1,8 @@
-packs/items/*.log
-packs/monsters/*.log
+packs/*/*.ldb
+packs/*/*.log
+packs/*/*.corrupt
 packs/*/CURRENT
 packs/*/LOCK
 packs/*/LOG
-packs/*/Log.old
+packs/*/LOG.old
 packs/*/MANIFEST*

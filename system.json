@@ -23,12 +23,14 @@
     {
       "name": "monsters",
       "label": "My Monsters",
-      "type": "Actor"
+      "type": "Actor",
+      "path": "packs/monsters"
     },
     {
       "name": "items",
       "label": "My Items",
-      "type": "Item"
+      "type": "Item",
+      "path": "packs/items"
     }
   ],
   "languages": [
