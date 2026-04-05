@@ -1,15 +1,18 @@
 {
   "TYPES": {
     "Actor": {
-      "npc": "NPC"
+      "npc": "NPC",
+      "player": "Player"
     }
   },
   "AM": {
-    "Health": "Health",
-    "Power": "Power",
-    "CharacterName": "Character Name",
-    "NPCLevel": "NPC Level",
-    "Stress": "Stress",
-    "RollStress": "Roll Stress"
+    "ActorFields": {
+      "Health": "Health",
+      "Power": "Power",
+      "CharacterName": "Character Name",
+      "Level": "Level",
+      "Stress": "Stress",
+      "RollStress": "Roll Stress"
+    }
   }
 }

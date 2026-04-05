@@ -1,6 +1,7 @@
 import { SystemActor, SystemItem } from "./module/documents.mjs";
-import { ActorNPC } from "./module/data-models/data-models.mjs";
-import { AmActorSheet } from "./module/sheets/am-actor-sheet.mjs";
+import { ActorNpc, ActorPlayer } from "./module/data-models/data-models.mjs";
+import { AmNpcSheet } from "./module/sheets/am-npc-sheet.mjs";
+import { AmPlayerSheet } from "./module/sheets/am-player-sheet.mjs";
 const { loadTemplates } = foundry.applications.handlebars;
 const { Actors } = foundry.documents.collections;
 const { ActorSheet } = foundry.appv1.sheets;
@@ -13,7 +14,8 @@ Hooks.once("init", () => {
 
   // Configure System Data Models.
   CONFIG.Actor.dataModels = {
-    npc: ActorNPC,
+    npc: ActorNpc,
+    player: ActorPlayer,
   };
 
   // Preload Handlebars partials
@@ -24,9 +26,14 @@ Hooks.once("init", () => {
 
   // Register custom sheets
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("active-measures", AmActorSheet, {
+  Actors.registerSheet("active-measures", AmNpcSheet, {
     types: ["npc"],
     makeDefault: true,
-    label: "Active Measures Actor Sheet"
+    label: "Active Measures NPC Sheet"
+  });
+  Actors.registerSheet("active-measures", AmPlayerSheet, {
+    types: ["player"],
+    makeDefault: true,
+    label: "Active Measures Player Sheet"
   });
 });

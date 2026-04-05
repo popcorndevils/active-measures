@@ -40,7 +40,8 @@
   ],
   "documentTypes": {
     "Actor": {
-      "npc": { "htmlFields": ["background.biography"] }
+      "npc": { "htmlFields": ["background.biography"] },
+      "player": { "htmlFields": ["background.biography"] }
     }
   },
   "socket": false,

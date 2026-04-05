@@ -1,6 +1,6 @@
 <div class="tab {{#if (eq tabGroups.primary 'stress')}}active{{/if}}" data-group="primary" data-tab="stress">
     <div class="form-group flexrow">
-        <a style="cursor: pointer;" data-action="rollStress" title="{{localize 'AM.RollStress'}}"><i class="fas fa-dice-d20"></i> {{localize "AM.Stress"}}</a>
+        <a style="cursor: pointer;" data-action="rollStress" title="{{localize 'AM.ActorFields.RollStress'}}"><i class="fas fa-dice-d20"></i> {{localize "AM.ActorFields.Stress"}}</a>
         <input type="number" name="system.tracks.stress.value" value="{{systemData.tracks.stress.value}}" style="max-width: 50px;"/>
         <span> / {{systemData.tracks.stress.max}}</span>
     </div>

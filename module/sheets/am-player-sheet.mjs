@@ -2,7 +2,7 @@ const { ActorSheetV2 } = foundry.applications.sheets;
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { renderTemplate } = foundry.applications.handlebars;
 
-export class AmActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
+export class AmPlayerSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   
   // In Application V2, we define our initial tabs here
   tabGroups = {
@@ -17,7 +17,7 @@ export class AmActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       closeOnSubmit: false
     },
     actions: {
-      rollStress: AmActorSheet.rollStress
+      rollStress: AmPlayerSheet.rollStress
     },
     position: {
       width: 500,
@@ -29,7 +29,7 @@ export class AmActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   };
 
   static PARTS = {
-    body: { template: "systems/active-measures/templates/actors/actor-sheet.hbs" }
+    body: { template: "systems/active-measures/templates/actors/sheet-player.hbs" }
   };
 
   get title() {

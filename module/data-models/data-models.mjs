@@ -4,7 +4,8 @@
 /*  Actor Models                                */
 /* -------------------------------------------- */
 
-export {default as ActorNPC} from "./actors/ActorNPC.mjs";
+export {default as ActorNpc} from "./actors/ActorNpc.mjs";
+export {default as ActorPlayer} from "./actors/ActorPlayer.mjs";
 
 /* -------------------------------------------- */
 /*  Item Models                                 */

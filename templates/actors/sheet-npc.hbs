@@ -8,12 +8,12 @@
         <div class="header-fields flexcol">
             <h1 class="charname" style="margin-bottom: 5px;">
                 {{!-- Binding to name="name" automatically updates the Document's root name property --}}
-                <input name="name" type="text" value="{{document.name}}" placeholder="{{localize 'AM.CharacterName'}}"/>
+                <input name="name" type="text" value="{{document.name}}" placeholder="{{localize 'AM.ActorFields.CharacterName'}}"/>
             </h1>
             
             <div class="resources flexrow">
                 <div class="resource flexcol flex-group-center" style="margin-right: 10px;">
-                    <label for="system.resources.health.value" class="resource-label">{{localize "AM.Health"}}</label>
+                    <label for="system.resources.health.value" class="resource-label">{{localize "AM.ActorFields.Health"}}</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.resources.health.value" value="{{systemData.resources.health.value}}"/>
                         <span> / </span>
@@ -22,7 +22,7 @@
                 </div>
                 
                 <div class="resource flexcol flex-group-center">
-                    <label for="system.resources.power.value" class="resource-label">{{localize "AM.Power"}}</label>
+                    <label for="system.resources.power.value" class="resource-label">{{localize "AM.ActorFields.Power"}}</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.resources.power.value" value="{{systemData.resources.power.value}}"/>
                         <span> / </span>
@@ -38,8 +38,8 @@
     {{!-- SHEET NAVIGATION --}}
     {{#if (eq document.type "npc")}}
     <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item {{#if (eq tabGroups.primary 'level')}}active{{/if}}" data-action="tab" data-group="primary" data-tab="level">{{localize "AM.NPCLevel"}}</a>
-        <a class="item {{#if (eq tabGroups.primary 'stress')}}active{{/if}}" data-action="tab" data-group="primary" data-tab="stress">{{localize "AM.Stress"}}</a>
+        <a class="item {{#if (eq tabGroups.primary 'level')}}active{{/if}}" data-action="tab" data-group="primary" data-tab="level">{{localize "AM.ActorFields.Level"}}</a>
+        <a class="item {{#if (eq tabGroups.primary 'stress')}}active{{/if}}" data-action="tab" data-group="primary" data-tab="stress">{{localize "AM.ActorFields.Stress"}}</a>
     </nav>
     {{/if}}
 

@@ -1,7 +1,7 @@
 const { NumberField, SchemaField } = foundry.data.fields;
 import BaseActor from "./BaseActor.mjs";
 
-export default class ActorNPC extends BaseActor {
+export default class ActorNpc extends BaseActor {
     static defineSchema() {
         return {
             ...super.defineSchema(),
